@@ -4,6 +4,8 @@ Desafío técnico para Fintual.
 
 **URL producción (Vercel):** [martin-santiago-portfolio.vercel.app](https://martin-santiago-portfolio.vercel.app)
 
+**Conversación con Claude:** [puntos clave](CONVERSACION-CON-CLAUDE.md)
+
 ## Cómo lo pensé
 
 ### 1. Entender qué pedían
