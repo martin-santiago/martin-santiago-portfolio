@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-page: #ffffff;
+  --color-surface: #fafafa;
+  --color-track: #eeeeee;
+  --color-ink: #161616;
+  --color-muted: #5c5c5c;
+  --color-faint: #707070;
+  --color-line: rgb(0 0 0 / 0.1);
+  --color-line-strong: rgb(0 0 0 / 0.2);
+  --color-accent: #3b5cf6;
+  --color-buy: #198b43;
+  --color-sell: #b82d35;
+  --font-mono: var(--font-plex-mono);
+  --text-label: 0.6875rem;
+  --text-ui: 0.8125rem;
+  --text-section: 1.75rem;
+  --text-hero: 4rem;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+}
+
+@utility dot-matrix {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Crect width='2' height='2' fill='%23d4d4d4'/%3E%3C/svg%3E");
+}
+
+@utility section-rails {
+  box-shadow:
+    inset 1px 0 var(--color-line),
+    inset -1px 0 var(--color-line),
+    inset 0 -1px var(--color-line);
+}
+
+@utility raised {
+  box-shadow:
+    0 0 0 0.5px rgb(0 0 0 / 0.14),
+    0 1px 2px -1px rgb(0 0 0 / 0.08),
+    0 2px 4px 0 rgb(0 0 0 / 0.04);
+}
+
+@utility button-primary {
+  @apply inline-flex h-8 items-center bg-[#242424] px-3 text-ui font-medium text-white transition-opacity duration-150 hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink disabled:cursor-not-allowed disabled:opacity-40;
+  box-shadow:
+    0 0 0 0.5px #3a3a3a,
+    0 1px 1.5px 0 rgb(0 0 0 / 0.2),
+    inset 0 -1px 2px 0 rgb(0 0 0 / 0.06),
+    inset 0 1px 2px 0 rgb(255 255 255 / 0.14);
+}
+
+@utility button-secondary {
+  @apply inline-flex h-8 items-center bg-page px-3 text-ui font-medium text-ink transition-colors duration-150 hover:bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink;
+  box-shadow:
+    0 0 0 0.5px rgb(0 0 0 / 0.14),
+    0 1px 1.5px 0 rgb(0 0 0 / 0.1);
+}
+
+.driver-popover.onboarding-popover {
+  min-width: 340px;
+  max-width: 400px;
+  padding: 16px;
+  border-radius: 0;
+  background-color: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  box-shadow:
+    0 0 0 0.5px rgb(0 0 0 / 0.14),
+    0 8px 16px rgb(0 0 0 / 0.06),
+    0 4px 8px rgb(0 0 0 / 0.08);
+}
+
+.onboarding-popover .driver-popover-title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.onboarding-popover .driver-popover-description {
+  margin-top: 6px;
+  color: var(--color-muted);
+  font-size: var(--text-ui);
+  line-height: 1.6;
+}
+
+.onboarding-popover .driver-popover-footer {
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.onboarding-popover .driver-popover-progress-text {
+  white-space: nowrap;
+  color: var(--color-faint);
+  font-size: var(--text-label);
+}
+
+.driver-popover.onboarding-popover .driver-popover-footer-btn {
+  @apply button-secondary h-7 px-2.5;
+  border: 0;
+  border-radius: 0;
+  text-shadow: none;
+}
+
+.driver-popover.onboarding-popover .driver-popover-next-btn,
+.driver-popover.onboarding-popover .driver-popover-next-btn:hover,
+.driver-popover.onboarding-popover .driver-popover-next-btn:focus {
+  @apply button-primary h-7 px-2.5;
+}
+
+.onboarding-popover .onboarding-skip {
+  @apply text-label text-faint underline-offset-2 hover:text-ink hover:underline focus-visible:outline-2 focus-visible:outline-ink;
+  order: -1;
+  margin-right: auto;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+@utility info-popover {
+  width: max-content;
+  max-width: min(300px, calc(100vw - 32px));
+  padding: 10px 12px;
+  border: 0;
+  background-color: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-ui);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: normal;
+  text-align: left;
+  text-transform: none;
+  white-space: normal;
+  box-shadow:
+    0 0 0 0.5px rgb(0 0 0 / 0.14),
+    0 8px 16px rgb(0 0 0 / 0.06),
+    0 4px 8px rgb(0 0 0 / 0.08);
+
+  @supports (position-area: bottom) {
+    inset: auto;
+    margin: 6px 0 0;
+    position-area: bottom span-right;
+    position-try-fallbacks: flip-block, flip-inline;
+  }
+}
